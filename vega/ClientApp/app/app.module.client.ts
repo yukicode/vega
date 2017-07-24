@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { sharedConfig } from './app.module.shared';
+import { sharedConfig } from './app.module';
+import { MakerService } from './services/maker.service';
 
 @NgModule({
     bootstrap: sharedConfig.bootstrap,
@@ -14,7 +15,8 @@ import { sharedConfig } from './app.module.shared';
         ...sharedConfig.imports
     ],
     providers: [
-        { provide: 'ORIGIN_URL', useValue: location.origin }
+        { provide: 'ORIGIN_URL', useValue: location.origin },
+        MakerService,
     ]
 })
 export class AppModule {

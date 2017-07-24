@@ -1,0 +1,11 @@
+<form>
+  <label for="vehicle-maker">Maker</label>
+  <select name="vehicle-maker" id="vehicle-maker" (change)="onChange" [(ngModel)]="selectedMaker">
+    <option *ngFor="let ma of makerNames" [value]="ma">{{ma}}</option>
+  </select>
+  <br>
+  <label for="vehicle-model">Model</label>
+  <select name="vehicle-model" id="vehicle-model">
+    <option *ngFor="let mo of models" [value]="mo">{{mo}}</option>
+  </select>
+</form>
